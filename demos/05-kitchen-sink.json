@@ -22,11 +22,11 @@
       "pluginPath": "classic-editor/classic-editor.php"
     },
     {
-      "step": "runWpCliCommand",
+      "step": "wp-cli",
       "command": "wp post create --post_type=page --post_title='Welcome' --post_status=publish"
     },
     {
-      "step": "runPhp",
+      "step": "runPHP",
       "code": "<?php wp_create_user('demo_user','password','demo@example.com'); ?>"
     }
   ]
