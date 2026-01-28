@@ -1,0 +1,16 @@
+{
+  "landingPage": "/wp-admin/plugins.php",
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "query-monitor"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginSlug": "query-monitor"
+    }
+  ]
+}

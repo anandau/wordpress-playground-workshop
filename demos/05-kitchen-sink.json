@@ -1,0 +1,33 @@
+{
+  "login": true,
+  "landingPage": "/wp-admin/",
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Kitchen Sink Demo Site",
+        "blogdescription": "A demo with multiple steps",
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "classic-editor"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginSlug": "classic-editor"
+    },
+    {
+      "step": "runWpCliCommand",
+      "command": "wp post create --post_type=page --post_title='Welcome' --post_status=publish"
+    },
+    {
+      "step": "runPhp",
+      "code": "<?php wp_create_user('demo_user','password','demo@example.com'); ?>"
+    }
+  ]
+}
