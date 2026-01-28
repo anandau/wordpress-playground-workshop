@@ -19,7 +19,7 @@
     },
     {
       "step": "activatePlugin",
-      "pluginSlug": "classic-editor"
+      "pluginPath": "classic-editor/classic-editor.php"
     },
     {
       "step": "runWpCliCommand",
