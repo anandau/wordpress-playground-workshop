@@ -10,7 +10,7 @@
     },
     {
       "step": "activatePlugin",
-      "pluginSlug": "woocommerce"
+      "pluginPath": "woocommerce/woocommerce.php"
     },
     {
       "step": "runPhp",

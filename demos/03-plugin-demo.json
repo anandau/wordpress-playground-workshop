@@ -10,7 +10,7 @@
     },
     {
       "step": "activatePlugin",
-      "pluginSlug": "query-monitor"
+      "pluginSlug": "query-monitor/query-monitor.php"
     }
   ]
 }
