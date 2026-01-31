@@ -3,7 +3,7 @@
   "steps": [
     {
       "step": "installPlugin",
-      "pluginZipFile": {
+      "pluginData": {
         "resource": "wordpress.org/plugins",
         "slug": "query-monitor"
       }
