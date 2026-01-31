@@ -1,0 +1,29 @@
+{
+  "login": true,
+  "landingPage": "/",
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "WordPress Blog Demo",
+        "blogdescription": "A demo blog with posts and images"
+      }
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=post --post_title='First Blog Post: Getting Started with WordPress' --post_content='<p>Welcome to our WordPress blog! This is the first post where we explore the fundamentals of WordPress blogging.</p><p>WordPress makes it easy to publish content, manage media, and engage with your audience. Whether you\\'re a blogger, business owner, or content creator, WordPress provides all the tools you need.</p><p>Key features include:</p><ul><li>Easy-to-use editor</li><li>Built-in SEO optimization</li><li>Responsive design</li><li>Extensive plugin ecosystem</li></ul><p>Stay tuned for more articles!</p>' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=post --post_title='Second Post: Advanced WordPress Techniques' --post_content='<p>In this post, we dive deeper into advanced WordPress techniques and best practices.</p><p>Whether you\\'re customizing themes, developing plugins, or optimizing performance, understanding these concepts will help you build better WordPress sites.</p><p>Topics covered:</p><ol><li>Custom post types and taxonomies</li><li>API integration</li><li>Performance optimization</li><li>Security hardening</li></ol><p>Each of these areas offers powerful capabilities for extending WordPress functionality.</p>' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=post --post_title='Third Post: WordPress Community and Resources' --post_content='<p>The WordPress community is one of the largest open-source communities in the world.</p><p>Whether you need help, want to learn new skills, or contribute to the project, there are countless resources available:</p><ul><li><strong>WordPress.org</strong> - Official documentation and support</li><li><strong>WordPress.com</strong> - Hosted WordPress blogs</li><li><strong>Local WordPress Communities</strong> - Meetups and WordCamps</li><li><strong>Online Courses</strong> - Learning platforms with WordPress content</li></ul><p>Don\\'t hesitate to reach out to the community. We\\'re all here to help each other succeed!</p>' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire_once '/wordpress/wp-load.php';\n\n// Function to download and attach featured image\nfunction set_post_featured_image($post_id, $image_url) {\n  require_once(ABSPATH . 'wp-admin/includes/image.php');\n  require_once(ABSPATH . 'wp-admin/includes/file.php');\n  require_once(ABSPATH . 'wp-admin/includes/media.php');\n  \n  $tmp = download_url($image_url);\n  if (is_wp_error($tmp)) return false;\n  \n  $file_array = array(\n    'name' => basename($image_url),\n    'tmp_name' => $tmp\n  );\n  \n  $attachment_id = media_handle_sideload($file_array, $post_id);\n  if (!is_wp_error($attachment_id)) {\n    set_post_thumbnail($post_id, $attachment_id);\n    return true;\n  }\n  return false;\n}\n\n// Add featured images to posts\n$posts = get_posts(array('numberposts' => 3, 'post_type' => 'post'));\n\nif (count($posts) >= 1) {\n  set_post_featured_image($posts[0]->ID, 'https://picsum.photos/800/400?random=1');\n}\nif (count($posts) >= 2) {\n  set_post_featured_image($posts[1]->ID, 'https://picsum.photos/800/400?random=2');\n}\nif (count($posts) >= 3) {\n  set_post_featured_image($posts[2]->ID, 'https://picsum.photos/800/400?random=3');\n}\n?>"
+    }
+  ]
+}
