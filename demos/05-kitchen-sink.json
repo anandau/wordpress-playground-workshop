@@ -27,7 +27,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php wp_create_user('demo_user','password','demo@example.com'); ?>"
+      "code": "<?php require_once '/wordpress/wp-load.php'; wp_create_user('demo_user','password','demo@example.com'); ?>"
     }
   ]
 }

@@ -13,8 +13,8 @@
       "pluginPath": "woocommerce/woocommerce.php"
     },
     {
-      "step": "runPhp",
-      "code": "<?php if (class_exists('WC_Product_Simple')) { $p = new WC_Product_Simple(); $p->set_name('Playground Demo Product'); $p->set_regular_price('499'); $p->set_status('publish'); $p->save(); } ?>"
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php';  if (class_exists('WC_Product_Simple')) { $p = new WC_Product_Simple(); $p->set_name('Playground Demo Product'); $p->set_regular_price('499'); $p->set_status('publish'); $p->save(); } ?>"
     }
   ]
 }
