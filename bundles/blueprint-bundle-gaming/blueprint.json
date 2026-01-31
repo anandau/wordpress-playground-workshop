@@ -1,14 +1,4 @@
 {
-  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "meta": {
-    "title": "Gaming News",
-    "description": "A gaming news site created with the Spiel theme.",
-    "author": "WordPress.com",
-    "categories": [
-      "Website",
-      "News"
-    ]
-  },
   "login": true,
   "siteOptions": {
     "blogname": "Spiel"
@@ -38,6 +28,5 @@
   "preferredVersions": {
     "php": "8.3",
     "wp": "latest"
-  },
-  "features": {}
+  }
 }
