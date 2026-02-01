@@ -1,13 +1,13 @@
 # WordPress Playground Workshop  
 ### WordCamp Kolhapur 2026
 
-This repository contains demo **WordPress Playground Blueprints**, example code and supporting materials used in the hands‑on workshop **“Getting Started with WordPress Playground.”**
+This repository contains **WordPress Playground Blueprints**, Blueprint Bundles, example code and supporting materials used in the hands‑on workshop **"Getting Started with WordPress Playground."**
 
 The workshop shows how WordPress can run entirely in the browser using Playground, and how Blueprints enable you to build **repeatable, shareable WordPress environments** for demos, testing, onboarding, documentation and learning.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start
 
 Open WordPress Playground:
 
@@ -27,55 +27,68 @@ All workshop demos are powered by **Blueprints**—JSON files that describe how 
 
 The simplest Blueprint. It sets a landing page but otherwise leaves WordPress untouched. Use it to demonstrate how Playground launches instantly.
 
-```
-https://playground.wordpress.net/?blueprint-url=RAW_URL_FOR_01_BASIC
-```
+**Features:** Landing page configuration
 
 ### 2. Version Control (`demos/02-versions.json`)
 
-Demonstrates setting specific PHP and WordPress versions via the Blueprint. Useful for reproducible testing.
+Demonstrates setting specific PHP and WordPress versions via the Blueprint. Useful for reproducible testing across different environments.
 
-```
-https://playground.wordpress.net/?blueprint-url=RAW_URL_FOR_02_VERSIONS
-```
+**Features:** PHP version selection, WordPress version selection
 
 ### 3. Plugin Demo (`demos/03-plugin-demo.json`)
 
-Automatically installs and activates the **Query Monitor** plugin. Shows how a single link can set up a plugin demo without manual steps.
+Automatically installs and activates the **Query Monitor** plugin. Shows how a single link can set up a plugin demo without manual steps.
 
-```
-https://playground.wordpress.net/?blueprint-url=RAW_URL_FOR_03_PLUGIN_DEMO
-```
+**Features:** Plugin installation, plugin activation
 
 ### 4. WooCommerce Product via Inline PHP (`demos/04-wc-inline-php-product.json`)
 
-Installs WooCommerce, activates it and uses an inline `runPhp` step to create a demo product. Demonstrates using PHP inside Blueprints for simple automation.
+Installs WooCommerce, activates it and uses an inline `runPHP` step to create a demo product. Demonstrates using PHP inside Blueprints for custom automation.
 
-```
-https://playground.wordpress.net/?blueprint-url=RAW_URL_FOR_04_WC_INLINE_PHP_PRODUCT
-```
+**Features:** Plugin installation, PHP execution, dynamic content creation
 
 ### 5. Kitchen Sink: Options, WP‑CLI, Login (`demos/05-kitchen-sink.json`)
 
-Combines multiple capabilities: installs and activates a plugin, updates site options, runs a WP‑CLI command to create a post, executes a small PHP snippet and includes a login step. Use this to showcase how complex setups can still be encoded in a single file.
+Combines multiple capabilities: site option updates, plugin installation and activation, WP‑CLI commands, and PHP execution. Automatically logs in the user. Use this to showcase how complex setups can be encoded in a single file.
 
-```
-https://playground.wordpress.net/?blueprint-url=RAW_URL_FOR_05_KITCHEN_SINK
-```
+**Features:** Site options, plugins, WP‑CLI, runPHP, automatic login
+
+---
+
+## 📦 Blueprint Bundles
+
+Blueprint Bundles extend Blueprints with additional assets (themes, plugins, media, content). They are distributed as ZIP files containing a `blueprint.json` and supporting assets.
+
+### Gaming Blueprint Bundle (`bundles/blueprint-bundle-gaming/`)
+
+A complete demo environment for gaming-themed WordPress sites with pre-configured content, themes, and plugins.
+
+**Contents:**
+- `blueprint.json` - Main blueprint configuration
+- `content.xml` - WXR export with posts and media
+- `spiel.zip` - Theme/plugin files
+
+**Use case:** Rapid setup of gaming community sites with demo content
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-wp-playground-workshop/
+wordpress-playground-workshop/
 ├── README.md                 # This file
-├── demos/                    # Blueprint files used in the workshop
+├── demos/                    # Individual Blueprint files
 │   ├── 01-basic.json
 │   ├── 02-versions.json
 │   ├── 03-plugin-demo.json
 │   ├── 04-wc-inline-php-product.json
 │   └── 05-kitchen-sink.json
+├── bundles/                  # Blueprint Bundles with assets
+│   ├── blueprint-bundle-gaming/
+│   │   ├── blueprint.json
+│   │   ├── content.xml
+│   │   └── spiel.zip
+│   └── blueprint-bundle-gaming.zip
 ├── exercises/                # Hands‑on practice tasks
 │   ├── 01-modify-site-options.md
 │   ├── 02-add-a-plugin.md
@@ -91,7 +104,7 @@ wp-playground-workshop/
 
 ---
 
-## 📘 What is a Blueprint?
+## 📘 What is a Blueprint?
 
 A **Blueprint** is a JSON configuration file that tells Playground how to set up WordPress automatically. It can:
 
@@ -107,6 +120,24 @@ In simple terms:
 > **Blueprint = WordPress Setup Recipe**
 
 Instead of long instructions, you can share a single URL and everyone gets the same environment.
+
+---
+
+## 📦 What is a Blueprint Bundle?
+
+A **Blueprint Bundle** extends the Blueprint concept by packaging additional assets alongside the blueprint configuration. It includes:
+
+* **blueprint.json** - The core Blueprint configuration
+* **Theme/Plugin files** - Pre-built themes and plugins (often in ZIP format)
+* **Content exports** - WXR files with posts, pages, media, and metadata
+* **Media assets** - Images, videos, and other media files
+
+Blueprint Bundles are useful for:
+
+* **Plugin/Theme Demos** - Test multiple extensions together with realistic content
+* **Learning Environments** - Provide complete, pre-configured WordPress sites for workshops
+* **Portfolio Projects** - Share client work with all assets and content included
+* **Quick Starts** - Enable instant WordPress environments for specific use cases
 
 ---
 
@@ -159,8 +190,8 @@ For the full list of Blueprint steps and advanced features, see the official doc
 
 ## 🙌 Credits
 
-Workshop designed and delivered by **Anand Upadhyay**  
-WordCamp Kolhapur 2026
+Workshop designed and delivered by **Anand Upadhyay**  
+WordCamp Kolhapur 2026
 
 ---
 
